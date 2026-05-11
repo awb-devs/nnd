@@ -62,17 +62,17 @@ pub enum Color {
     Palette8Bright(u8), // ESC[(90-97|100-107)m
     TerminalDefault,    // ESC[(39|49)m
 }
-impl Default for Color { fn default() -> Self { Self::Rgb(0, 0, 0) } }
+impl Default for Color { fn default() -> Self { Self::Rgb(30, 30, 46) } }
 impl Color {
-    pub fn white() -> Self { Self::Rgb(255, 255, 255) }
-    pub fn black() -> Self { Self::Rgb(0, 0, 0) }
-    pub fn darker(self) -> Self {
+    pub fn white() -> Self { Self::Rgb(205, 214, 244) }
+    pub fn black() -> Self { Self::Rgb(30, 30, 46) }
+    pub fn darker(self) -> Self { self } /*Self {
         let f = |x| (x as usize * 2 / 3) as u8;
         match self {
             Color::Rgb(r, g, b) => Self::Rgb(f(r), f(g), f(b)),
             _ => self,
         }
-    }
+    }*/
     // bg_or_fg is 0 for foreground color, 10 for background color.
     pub fn write_ansi(self, out: &mut Vec<u8>, bg_or_fg: u8) {
         (match self {

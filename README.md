@@ -1,3 +1,9 @@
+This is a Fork of [al13n321/nnd](https://github.com/al13n321/nnd).
+This branch implements all changes from the main branch, and applies a custom theme
+using the [Catppuccin](https://catppuccin.com) colorscheme. It is not intended to nor will
+be upstreamed unless customizable theming ends up supported upstream.
+
+
 A debugger for Linux. Partially inspired by RemedyBG.
 
 Mom, can we have RAD Debugger on Linux?
